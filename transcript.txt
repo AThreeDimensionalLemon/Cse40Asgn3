@@ -1,0 +1,135 @@
+Autograder transcript for assignment: Hands-On 3: Data Cleaning
+Grading started at 2026-11-10T14:14:53.186-08:00 and ended at 2026-11-10T14:14:55.203-08:00.
+Task 1.A (drop_sparse_columns): 10 / 10
+Task 1.B (extract_numbers): 28 / 30
+   Incorrect value (99.8) for test case 'percentage with space'.
+   Incorrect type (<class 'int'>) for test case: '(no point deduction, just for your information) non-standard date: `(July 2021 est.) no indigenous inhabitants`'.
+   Incorrect value (0.7090000000000001) for test case '(no point deduction, just for your information) non-standard date: `70.9% (4th quarter, 2011 est.)`'.
+   Incorrect value (0.765) for test case '(no point deduction, just for your information) error in the data?: `total: 76.5% of population 70.2%`'.
+   Incorrect value (601) for test case '(extra credit) additive values'.
+   Incorrect value (2020) for test case '(extra credit) additive values with parenthetical text'.
+Task 1.C (guess_types): 0 / 10
+   Error during execution: 'Traceback (most recent call last):
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/arrays/integer.py", line 53, in _safe_cast
+       return values.astype(dtype, casting="safe", copy=copy)
+   TypeError: Cannot cast array data from dtype('O') to dtype('int64') according to the rule 'safe'
+
+   During handling of the above exception, another exception occurred:
+
+   Traceback (most recent call last):
+     File "/usr/local/lib/python3.10/dist-packages/autograder/util/invoke.py", line 89, in _invoke_helper
+       value = function()
+     File "/usr/local/lib/python3.10/dist-packages/autograder/question.py", line 228, in _score_helper
+       self.score_question(submission, **additional_data)
+     File "/autograder/work/grader.py", line 199, in score_question
+       result = submission.__all__.guess_types(test_frame)
+     File "/autograder/input/assignment.ipynb", line 82, in guess_types
+       "    .dataframe thead th {\n",
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/generic.py", line 6665, in astype
+       new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/internals/managers.py", line 449, in astype
+       return self.apply(
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/internals/managers.py", line 363, in apply
+       applied = getattr(b, f)(**kwargs)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/internals/blocks.py", line 784, in astype
+       new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/astype.py", line 237, in astype_array_safe
+       new_values = astype_array(values, dtype, copy=copy)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/astype.py", line 182, in astype_array
+       values = _astype_nansafe(values, dtype, copy=copy)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/dtypes/astype.py", line 80, in _astype_nansafe
+       return dtype.construct_array_type()._from_sequence(arr, dtype=dtype, copy=copy)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/arrays/masked.py", line 153, in _from_sequence
+       values, mask = cls._coerce_to_array(scalars, dtype=dtype, copy=copy)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/arrays/numeric.py", line 272, in _coerce_to_array
+       values, mask, _, _ = _coerce_to_data_and_mask(
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/arrays/numeric.py", line 229, in _coerce_to_data_and_mask
+       values = dtype_cls._safe_cast(values, dtype, copy=False)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/arrays/integer.py", line 55, in _safe_cast
+       casted = values.astype(dtype, copy=copy)
+   ValueError: invalid literal for int() with base 10: 'foo'
+   '.
+Task 2.A (find_outliers): 0 / 10
+   Error during execution: 'Traceback (most recent call last):
+     File "/usr/local/lib/python3.10/dist-packages/autograder/util/invoke.py", line 89, in _invoke_helper
+       value = function()
+     File "/usr/local/lib/python3.10/dist-packages/autograder/question.py", line 228, in _score_helper
+       self.score_question(submission, **additional_data)
+     File "/autograder/work/grader.py", line 214, in score_question
+       result = submission.__all__.find_outliers(pandas.DataFrame(), 0, "")
+     File "/autograder/input/assignment.ipynb", line 99, in find_outliers
+       "      <th>Labor Agriculture</th>\n",
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 4113, in __getitem__
+       indexer = self.columns.get_loc(key)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/range.py", line 417, in get_loc
+       raise KeyError(key)
+   KeyError: ''
+   '.
+Task 2.B (merge_columns): 10 / 10
+Task 3.A (one_hot): 0 / 10
+   Error during execution: 'Traceback (most recent call last):
+     File "/usr/local/lib/python3.10/dist-packages/autograder/util/invoke.py", line 89, in _invoke_helper
+       value = function()
+     File "/usr/local/lib/python3.10/dist-packages/autograder/question.py", line 228, in _score_helper
+       self.score_question(submission, **additional_data)
+     File "/autograder/work/grader.py", line 266, in score_question
+       result = submission.__all__.one_hot(pandas.DataFrame(), "")
+     File "/autograder/input/assignment.ipynb", line 154, in one_hot
+       "      <td>NaN</td>\n",
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/frame.py", line 4113, in __getitem__
+       indexer = self.columns.get_loc(key)
+     File "/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/range.py", line 417, in get_loc
+       raise KeyError(key)
+   KeyError: ''
+   '.
+Task 4.A (left_join): 10 / 10
+Style: 0 / 10
+   Code has 13 style issues (shown below). Note that line numbers may be offset in iPython notebooks.
+   --- Style Output BEGIN ---
+
+   Style Issues for: '/autograder/input/assignment.ipynb':
+   ---
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:48:12: E713 test for membership should be 'not in'
+           if not column in ignore_columns:
+              ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:51:30: E261 at least two spaces before inline comment
+                   if numSchRes: # There is a number to handle
+                                ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:55:34: E261 at least two spaces before inline comment
+                       if perSchRes: # The number is a percentage
+                                    ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:57:54: E261 at least two spaces before inline comment
+                       elif decSchRes and not perSchRes: # The number has a decimal point
+                                                        ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:59:26: E261 at least two spaces before inline comment
+                       else: # The number is an integer
+                            ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:61:22: E261 at least two spaces before inline comment
+                   else: # There is no number to handle
+                        ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:75:16: E721 do not compare types, for exact checks use `is` / `is not`, for instance checks use `isinstance()`
+               if type(frame[column][i]) == int:
+                  ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:77:18: E721 do not compare types, for exact checks use `is` / `is not`, for instance checks use `isinstance()`
+               elif type(frame[column][i]) == float:
+                    ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:79:18: E721 do not compare types, for exact checks use `is` / `is not`, for instance checks use `isinstance()`
+               elif type(frame[column][i]) == str:
+                    ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:122:28: E231 missing whitespace after ':'
+               tmp.update({key:res[key]})
+                              ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:128:63: E261 at least two spaces before inline comment
+   def merge_columns(frame, merge_column_names, new_column_name): # I am developing a hatred for Python
+                                                                 ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:156:12: E721 do not compare types, for exact checks use `is` / `is not`, for instance checks use `isinstance()`
+           if type(value) != str:
+              ^
+   style_04dff48d-128c-43be-87c6-2881d534b047_notebook:160:16: E713 test for membership should be 'not in'
+               if not newCol in frame.columns:
+                  ^
+   ---
+
+   --- Style Output END ---
+
+Total: 58 / 100
